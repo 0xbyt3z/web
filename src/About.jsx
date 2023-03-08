@@ -7,11 +7,14 @@ const linkStyle = {
 };
 
 export default function App() {
+  useEffect(() => {
+    document.getElementById("video").playbackRate = 0.7;
+  });
   return (
     <>
-      <div className="h-screen w-screen bg-[#111010] overflow-x-hidden font-serif z-40">
+      <div className="h-screen w-screen bg-[#111010] flex overflow-x-hidden font-serif z-40">
         {/*Hero*/}
-        <div className="max-w-4xl px-10 lg:px-0 mx-auto h-1/2 flex flex-col lg:flex-row mt-10 lg:mt-36">
+        <div className="max-w-4xl px-10 lg:px-0 mx-auto h-1/2 flex flex-col lg:flex-row mt-10 lg:mt-36 z-40">
           {/*nav*/}
           <aside className="w-36 h-full flex flex-col">
             <div className="w-full h-20 flex items-center mb-10">
@@ -50,6 +53,9 @@ export default function App() {
               <GitHubCalendar username="0xbyt3z" color={"#00D9C0"} />
             </div>
           </div>
+        </div>
+        <div className="z-10 absolute w-full h-full overflow-hidden">
+          <video id="video" src="./back.mp4" controls="false" autoPlay muted loop></video>
         </div>
       </div>
     </>
